@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="_css/style.css" />
-    <link rel="stylesheet" href="_css/output.css" />
+    <link rel="stylesheet" href="../_css/style.css" />
+    <link rel="stylesheet" href="../_css/output.css" />
     <link rel="icon" type="image/png" href="../_img/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="_js/script.js"></script>
     <link
       rel="stylesheet"
@@ -55,15 +56,25 @@
       </nav>
     </header>
 
-    <main class="w-full flex justify-center items-center my-6">
+    <main class="w-full flex justify-center items-center mt-20">
       <section
-        class="max-w-screen-xl w-full py-2  mx-auto flex flex-col "
+        class="max-w-screen-xl w-full py-2 mx-auto flex flex-col "
       >
-        <div class="flex justify-between">
-          <div class="flex gap-2 items-center">
-            <span class="w-1 h-4 rounded-xl  "></span>
+        <div class="flex justify-between items-center ">
+          <div class="relative">
+            <span class="w-1 h-4 rounded-xl bg-fuchsia-900 absolute -left-2 top-2"></span>
             <p class="font-semibold text-2xl ">Consultar convênios</p>
           </div>  
+          
+          <div class="w-96 border border-zinc-400 rounded-xl px-4 flex justify-between items-center">
+            <input 
+              type="text" 
+              placeholder="pesquisar convênio"
+              class="w-full py-2 outline-0"
+            >
+
+            <i class="fa-solid fa-magnifying-glass text-zinc-400"></i>
+          </div>
         </div>
 
         <div class="grid-cols-4">
