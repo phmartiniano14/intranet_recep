@@ -47,6 +47,8 @@
     --color-cyan-700: oklch(52% 0.105 223.128);
     --color-cyan-800: oklch(45% 0.085 224.283);
     --color-cyan-900: oklch(39.8% 0.07 227.392);
+    --color-fuchsia-50: oklch(97.7% 0.017 320.058);
+    --color-fuchsia-100: oklch(95.2% 0.037 318.852);
     --color-fuchsia-400: oklch(74% 0.238 322.16);
     --color-fuchsia-900: oklch(40.1% 0.17 325.612);
     --color-zinc-200: oklch(92% 0.004 286.32);
@@ -482,6 +484,12 @@
   .border-cyan-900 {
     border-color: var(--color-cyan-900);
   }
+  .border-fuchsia-100 {
+    border-color: var(--color-fuchsia-100);
+  }
+  .border-fuchsia-100\! {
+    border-color: var(--color-fuchsia-100) !important;
+  }
   .border-zinc-300 {
     border-color: var(--color-zinc-300);
   }
@@ -523,6 +531,12 @@
   }
   .bg-cyan-900 {
     background-color: var(--color-cyan-900);
+  }
+  .bg-fuchsia-50 {
+    background-color: var(--color-fuchsia-50);
+  }
+  .bg-fuchsia-100 {
+    background-color: var(--color-fuchsia-100);
   }
   .bg-fuchsia-400 {
     background-color: var(--color-fuchsia-400);
