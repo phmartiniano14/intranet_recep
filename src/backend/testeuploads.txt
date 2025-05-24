@@ -1,0 +1,47 @@
+<?php
+include 'conexao.php';
+
+// Pasta para uploads
+$diretorio_logo = "uploads/logos/";
+$diretorio_manual = "uploads/manuais/";
+
+// Dados do formulário
+$nome   = $_POST['nome'];
+$login  = $_POST['login'];
+$senha  = $_POST['senha'];
+
+// Upload do logo
+$logo_nome = $_FILES['logo']['name'];
+$logo_temp = $_FILES['logo']['tmp_name'];
+move_uploaded_file($logo_temp, $diretorio_logo . $logo_nome);
+
+// Upload do manual (opcional)
+$manual_nome = "";
+if ($_FILES['manual']['name'] != "") {
+    $manual_nome = $_FILES['manual']['name'];
+    $manual_temp = $_FILES['manual']['tmp_name'];
+    move_uploaded_file($manual_temp, $diretorio_manual . $manual_nome);
+}
+
+// Inserir no banco
+$sql = "INSERT INTO convenios (nome, logo, manual, login, senha)
+        VALUES (?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sssss", $nome, $logo_nome, $manual_nome, $login, $senha);
+
+if ($stmt->execute()) {
+    echo "Convênio cadastrado com sucesso!";
+} else {
+    echo "Erro: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+?>
+
+   <label>Logo (imagem):</label><br>
+        <input type="file" name="logo" accept="image/*" required><br><br>
+
+        <label>Manual (PDF ou DOCX):</label><br>
+        <input type="file" name="manual" accept=".pdf,.doc,.docx"><br><br>
